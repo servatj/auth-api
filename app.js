@@ -6,10 +6,15 @@ const User = require('./model/user');
 const jwt = require('jsonwebtoken');
 const app = express();
 
+const { verifyToken } = './middleware/auth.js'
+
 app.use(express.json());
 
-app.post('/register', async (req, res) => {
+app.post('/welcome', verifyToken, (req, res) => {
+    res.status(200).send('Welcome 😃 !')
+})
 
+app.post('/register', async (req, res) => {
     try {
         const { first_name, last_name, email, password } = req.body;
         if (!(email && password && first_name && last_name)) {
@@ -46,7 +51,6 @@ app.post('/register', async (req, res) => {
 })
 
 app.post('/login', async (req, res) => {
-
     try {
         const { email, password } = req.body;
         if(!email) {
