@@ -6,13 +6,13 @@ const User = require('./model/user');
 const jwt = require('jsonwebtoken');
 const app = express();
 
-const { verifyToken } = './middleware/auth.js'
+const { verifyToken } = require('./middleware/auth.js')
 
 app.use(express.json());
 
 app.post('/welcome', verifyToken, (req, res) => {
-    res.status(200).send('Welcome 😃 !')
-})
+    res.status(200).send('Welcome 😃 !');
+});
 
 app.post('/register', async (req, res) => {
     try {
@@ -48,7 +48,7 @@ app.post('/register', async (req, res) => {
         res.status(500).send('Error when registering a user' + error);
     }
 
-})
+});
 
 app.post('/login', async (req, res) => {
     try {
@@ -76,6 +76,6 @@ app.post('/login', async (req, res) => {
     } catch (error) {
         console.log("Error when login", error)
     }
-})
+});
 
 module.exports = app;
