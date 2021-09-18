@@ -10,9 +10,15 @@ docker run -d --name container_mongo2 -p 27017:27017 \
       mongo
 ```
 
+### enviroment vars to make this work and keep you save
+
+MONGO_URI= your mongo uri connection
+API_PORT= port thar you want to expose
+TOKEN_KEY= Token key to generat your token
+
 ## USAGE 
 
-Ensure deps are already there, you will need a docker mongo or any other mongo db.
+Ensure deps and env vars are already there before running this, you will need a docker mongo or any other mongo db.
 
 ```nmp run start```
 
