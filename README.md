@@ -10,7 +10,7 @@ docker run -d --name container_mongo2 -p 27017:27017 \
       mongo
 ```
 
-### enviroment vars to make this work and keep you save
+### Enviroment vars to make this work and keep you safe
 
 ```js 
 - MONGO_URI= your mongo uri connection
