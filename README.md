@@ -12,9 +12,11 @@ docker run -d --name container_mongo2 -p 27017:27017 \
 
 ### enviroment vars to make this work and keep you save
 
-MONGO_URI= your mongo uri connection
-API_PORT= port thar you want to expose
-TOKEN_KEY= Token key to generat your token
+```js 
+- MONGO_URI= your mongo uri connection
+- API_PORT= port number that you want to expose
+- TOKEN_KEY= Token key to generat your token
+```
 
 ## USAGE 
 
